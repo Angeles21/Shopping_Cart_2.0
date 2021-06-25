@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			crossorigin="anonymous"
+			integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+			crossorigin="anonymous"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+		/>
+		<link rel="stylesheet" href="./stylesheet.css" />
+		<title>HACKATON 11</title>
+	</head>
+	<body>
+		<!-- NAVEGATION BAR -->
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<div class="container-fluid">
+				<!-- THIS IS THE LOGO -->
+				<a class="navbar-brand" href="#" style="color: rgb(220, 38, 77)">MUSIC EXPO</a>
+				<!-- THIS IS THE RESPONSIVE MENU -->
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- THESE ARE THE ITEMS OF THE MENU -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mb-2 mb-lg-0 ma-0">
+						<li class="nav-item ms-3">
+							<a class="nav-link" href="#"> HOME </a>
+						</li>
+						<li class="nav-item ms-3">
+							<a class="nav-link" href="#"> ALBUMS </a>
+						</li>
+					</ul>
+				</div>
+				<div
+					class="collapse navbar-collapse justify-content-end principal"
+					id="navbarSupportedContent"
+				>
+					<ul class="navbar-nav mb-2 mb-lg-0 ma-0">
+						<li class="nav-item ms-3 submenu">
+							<button type="button" class="btn btn-right" data-target="#cart">
+								<i class="fas fa-shopping-cart cart"></i>
+								<span id="counter" class="total-count">0</span>
+								<!-- THIS IS THE WINDOW -->
+								<div id="cart">
+									<table id="list__cart" class="u-full-width">
+										<button href="#" id="clear" class="btn__empty th">CLEAR ALL</button>
+										<thead style="justify-content: center">
+											<tr style="justify-content: center">
+												<th>Image</th>
+
+												<th>Name</th>
+
+												<th>Quantity</th>
+
+												<th>Price</th>
+											</tr>
+										</thead>
+										<tbody></tbody>
+									</table>
+								</div>
+								<!-- WINDOW CLOSES-->
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- THIS IS THE STRIPE -->
+		<div style="background: rgb(220, 38, 77)">
+			<div class="container row extra">
+				<h2>Featured Artist: Teddyloid</h2>
+				<span> Discover more in our store today!</span>
+			</div>
+		</div>
+		<!-- THIS IS THE SHOPPING SECTION -->
+		<div class="container row">
+			<!---->
+			<div id="father" class="center col">
+				<!---->
+				<div class="product son">
+					<img src="./img/img_1.jpg" class="product__img" alt="" />
+					<h2 style="margin-top: 1em">シニガミレコード</h2>
+					<p>By: Jin & IA</p>
+					<div class="product__text">
+						<div class="product__star_rating">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+						</div>
+						<div class="product__price">
+							<p class="value">40<span> USD</span></p>
+						</div>
+					</div>
+					<div class="product__btn">
+						<button id="purchase" class="btn__buy shopping" data-id="1">Purchase</button>
+					</div>
+				</div>
+				<!---->
+				<div class="product son">
+					<img src="./img/img_2.jpg" class="product__img" alt="" />
+					<h2 style="margin-top: 1em">空想フォレスト</h2>
+					<p>By: Jin & IA</p>
+					<div class="product__text">
+						<div class="product__star_rating">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+						</div>
+						<div class="product__price">
+							<p class="value">40<span> USD</span></p>
+						</div>
+					</div>
+					<div class="product__btn">
+						<button id="purchase" class="btn__buy shopping" data-id="2">Purchase</button>
+					</div>
+				</div>
+				<!---->
+				<div class="product son">
+					<img src="./img/img_3.jpg" class="product__img" alt="" />
+					<h2 style="margin-top: 1em">透明アンサー</h2>
+					<p>By: Jin & IA</p>
+					<div class="product__text">
+						<div class="product__star_rating">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+						<div class="product__price">
+							<p class="value">40<span> USD</span></p>
+						</div>
+					</div>
+					<div class="product__btn">
+						<button id="purchase" class="btn__buy shopping" data-id="3">Purchase</button>
+					</div>
+				</div>
+
+				<!---->
+				<div class="product son">
+					<img src="./img/img_4.jpg" class="product__img" alt="" />
+					<h2 style="margin-top: 1em">カゲロウデイズ</h2>
+					<p>By: Jin & IA</p>
+					<div class="product__text">
+						<div class="product__star_rating">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+						</div>
+						<div class="product__price">
+							<p class="value">40<span> USD</span></p>
+						</div>
+					</div>
+					<div class="product__btn">
+						<button id="purchase" class="btn__buy shopping" data-id="4">Purchase</button>
+					</div>
+				</div>
+				<!---->
+				<div class="product son">
+					<img src="./img/img_5.jpg" class="product__img" alt="" />
+					<h2 style="margin-top: 1em">アウターサイエンス</h2>
+					<p>By: Jin & IA</p>
+					<div class="product__text">
+						<div class="product__star_rating">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+							<span class="fa fa-star"></span>
+						</div>
+						<div class="product__price">
+							<p class="value">40<span> USD</span></p>
+						</div>
+					</div>
+					<div class="product__btn">
+						<button id="purchase" class="btn__buy shopping" data-id="5">Purchase</button>
+					</div>
+				</div>
+				<!---->
+				<div class="product son">
+					<img src="./img/img_6.jpg" class="product__img" alt="" />
+					<h2 style="margin-top: 1em">マリーの架空世界</h2>
+					<p>By: Jin & IA</p>
+					<div class="product__text">
+						<div class="product__star_rating">
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star checked"></span>
+							<span class="fa fa-star"></span>
+						</div>
+						<div class="product__price">
+							<p class="value">40<span> USD</span></p>
+						</div>
+					</div>
+					<div class="product__btn">
+						<button id="purchase" class="btn__buy shopping" data-id="6">Purchase</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="./app.js"></script>
+	</body>
+</html>
