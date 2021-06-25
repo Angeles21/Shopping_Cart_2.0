@@ -1,14 +1,3 @@
-///  --- VARIABLES --- ///
-
-/* Calling all products */
-const father = document.getElementById("father");
-/* Calling the purchase button */
-const purchaseBtn = document.getElementById("purchase");
-/* Calling the dropdown */
-const tableCart = document.querySelector("#list__cart tbody");
-/* Calling the clear button */
-const clearCart = document.getElementById("clear");
-
 let newItems = [];
 
 loadAll();
@@ -17,43 +6,43 @@ loadAll();
 
 function loadAll() {
 	/*Purchase*/
-	father.addEventListener("click", addItem);
+	document.getElementById("father").addEventListener("click", addItem);
 	/*Erase purchase*/
-	cart.addEventListener("click", deleteItem);
+	document.getElementById("cart").addEventListener("click", deleteItem);
 	/*Clear cart */
-	clearCart.addEventListener("click", emptyItem);
+	document.getElementById("clear").addEventListener("click", emptyItem);
 }
 
 ///  --- FUNCTIONS --- ///
 
 /* Purchase register */
-// By selecting the father, we navigate inside of it //
+// By selecting the document.getElementById("father"), we navigate inside of it //
 function addItem(e) {
 	if (e.target.classList.contains("shopping")) {
 		let item = e.target.parentElement.parentElement;
-		console.log(item);
 
 		/*Only once per item */
 		let button = e.target;
 		button.setAttribute("disabled", "");
-
-		dataEntry(item);
+		dataEntry(item, button.getAttribute("data-id"));
 	}
 }
 
-function dataEntry(item) {
+function dataEntry(item, id) {
 	const infoItem = {
 		image: item.querySelector("img").src,
 		title: item.querySelector("h2").textContent,
 		price: item.querySelector(".value").textContent,
+		id,
 		quantity: 1,
 	};
+
 	/* Convert to array */
 	newItems = [...newItems, infoItem];
 	//console.log(newItems);
 
 	/* Number of items inside */
-	counter.textContent = newItems.length;
+	document.getElementById("counter").textContent = `${newItems.length}`;
 
 	/* For the next function */
 	keepIn(newItems);
@@ -70,13 +59,13 @@ function keepIn(items) {
         <td> "${item.title}"</td>
         <td> "${item.quantity}" </td>
         <td> "${item.price}" </td>
-        
+
         <td>
-            <a href="#" class = "delete" data-id= "${item.id}"> x </a>
+            <a href="#" class = "delete" data-id="${item.id}"> x </a>
         </td>`;
 	});
-	//console.log(purchase);
-	tableCart.appendChild(purchase);
+
+	document.querySelector("#list__cart tbody").appendChild(purchase);
 }
 
 /// --- DELETE --- ///
@@ -84,9 +73,13 @@ function keepIn(items) {
 function deleteItem(e) {
 	if (e.target.classList.contains("delete")) {
 		const currentItem = e.target.parentElement.parentElement;
-		const itemId = currentItem.querySelector("a").getAttribute("data-id");
-		console.log(itemId);
+		const itemId = parseInt(currentItem.querySelector("a").getAttribute("data-id"));
+		const counter = document.getElementById("counter");
 
+		/* Remove from cart counter */
+		counter.textContent = `${parseInt(counter.textContent) - 1}`;
+
+		/* Remove all from the table */
 		currentItem.remove();
 	}
 }
@@ -95,5 +88,7 @@ function deleteItem(e) {
 
 function emptyItem(e) {
 	e.preventDefault();
-	tableCart.innerHTML = "";
+	document.querySelector("#list__cart tbody").innerHTML = "";
+	document.getElementById("counter").textContent = "0";
+	newItems = [];
 }
